@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 #qurtaar
 
-awk '{print $1, $9}' apache-access.log | \
-awk '{count[$1" "$2]++} END {for (k in count) printf "%8d %s\n", count[k], k}' | \
-sort -nr
+awk '{print $1,$9}' apache-access.log | sort | uniq -c | sort -nr
