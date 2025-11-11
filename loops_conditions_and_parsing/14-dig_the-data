@@ -2,5 +2,5 @@
 #qurtaar
 
 awk '{print $1, $9}' apache-access.log | \
-awk '{ip=$1; code=$2; count[ip" "code]++} END {for (k in count) print count[k], k}' | \
+awk '{count[$1" "$2]++} END {for (k in count) printf "%8d %s\n", count[k], k}' | \
 sort -nr
