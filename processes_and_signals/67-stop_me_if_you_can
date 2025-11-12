@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#davami
+
+pkill -f -TERM '7-highlander'
