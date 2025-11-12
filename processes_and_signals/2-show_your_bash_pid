@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#indi 3
+# shellcheck disable=SC2009
+ps aux | grep "bash"
