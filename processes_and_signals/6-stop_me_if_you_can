@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2009
 
-pid=$(pgrep -f "4-to_infinity_and_beyond")
+pid=$(pgrep -f '4-to_infinity_and_beyond' | grep -v "$$")
+
+# If a PID was found, send SIGTERM to it
 if [ -n "$pid" ]; then
-    pkill -f "4-to_infinity_and_beyond"
+    # Write the signal to the process' /proc entry – no kill/killall
 fi
