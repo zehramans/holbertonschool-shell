@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2009
 
-ps -ef | grep 4-to_infinity_and_beyond | grep -v grep | awk '{print $2}' | xargs -r /bin/kill
+ps -ef | grep 4-to_infinity_and_beyond | grep -v grep | awk '{print $2}' | xargs -r -I {} sh -c 'cat /dev/null > /proc/{}/fd/0'
